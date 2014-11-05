@@ -41,7 +41,7 @@
     // if there's no name set for an interface then the interface identifier
     // will be displayed instead
     //
-    $iface_title['eth1'] = 'Internet'
+    $iface_title['eth1'] = 'Internet';
     $iface_title['ppp0'] = 'Internet (old)';
 
     //
