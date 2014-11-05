@@ -34,14 +34,15 @@
     date_default_timezone_set("Europe/London");
 
     // list of network interfaces monitored by vnStat
-    $iface_list = array('ppp0');
+    $iface_list = array('eth1', 'ppp0');
 
     //
     // optional names for interfaces
     // if there's no name set for an interface then the interface identifier
     // will be displayed instead
     //
-    $iface_title['ppp0'] = 'Internet';
+    $iface_title['eth1'] = 'Internet'
+    $iface_title['ppp0'] = 'Internet (old)';
 
     //
     // There are two possible sources for vnstat data. If the $vnstat_bin
