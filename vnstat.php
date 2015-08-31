@@ -83,7 +83,7 @@
         }
 
 	$tp = "./themes/$style";
-        if (!is_dir($tp) || !file_exists("$tp/theme.php"))
+        if (!is_dir($tp) || !file_exists("$tp/theme.php") || !preg_match('/^[a-z0-9-_]+$/i', $style))
         {
 	    $style = DEFAULT_COLORSCHEME;
         }
@@ -122,6 +122,10 @@
         $hour = array();
         $month = array();
         $top = array();
+
+        if (strpos($vnstat_data[0], 'Error') !== false) {
+          return;
+        }
 
         //
         // extract data
@@ -199,16 +203,9 @@
                 $summary[$d[0]] = isset($d[1]) ? $d[1] : '';
             }
         }
-        if (count($day) == 0)
-            $day[0] = 'nodata';
+
         rsort($day);
-
-        if (count($month) == 0)
-            $month[0] = 'nodata';
         rsort($month);
-
-        if (count($hour) == 0)
-            $hour[0] = 'nodata';
         rsort($hour);
     }
 ?>
